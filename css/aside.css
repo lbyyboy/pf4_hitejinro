@@ -1,0 +1,281 @@
+aside {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  right: -100px;
+  top: 0;
+  background-color: #2f3339;
+  min-height: 600px;
+  transition: .5s;
+  z-index: 2;
+}
+aside .wrap {
+  width: 100px;
+  margin: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 30px 1fr 50px;
+  grid-template-columns: 1fr;
+}
+aside .wrap h2 {
+  text-transform: uppercase;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+aside .wrap ul.list {
+  display: grid;
+  grid-template-rows: repeat(8,1fr);
+  text-align: center;
+}
+aside .wrap ul.list > li {
+  
+}
+aside .wrap ul.list > li h3 {
+  height: 100%;
+  position: relative;
+}
+aside .wrap ul.list > li h3::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .2s;
+}
+aside .wrap ul.list > li h3.listshow::before {
+  width: 100%;
+}
+aside .wrap ul.list > li:nth-child(1) h3::before {
+  background-color: #ffc100;
+}
+aside .wrap ul.list > li:nth-child(2) h3::before {
+  background-color: #99cc41;
+}
+aside .wrap ul.list > li:nth-child(3) h3::before {
+  background-color: #f68a0a;
+}
+aside .wrap ul.list > li:nth-child(4) h3::before {
+  background-color: #bb2b2b;
+}
+aside .wrap ul.list > li:nth-child(5) h3::before {
+  background-color: #7436b5;
+}
+aside .wrap ul.list > li:nth-child(6) h3::before {
+  background-color: #2dabdf;
+}
+aside .wrap ul.list > li:nth-child(7) h3::before {
+  background-color: #ff617f;
+}
+aside .wrap ul.list > li:nth-child(8) h3::before {
+  background-color: #727272;
+}
+aside .wrap ul.list > li h3 a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  flex-direction: column;
+  gap: 5px;
+  color: rgba(255, 255, 255, .5);
+  position: relative;
+}
+aside .wrap ul.list > li h3 a::before{
+  content:""; 
+  width: 41px;
+  height: 41px;
+  display: block;
+  background-image: url(../img/aside/gnb_brand_menu.png);
+  opacity: 0.5;
+}
+aside .wrap ul.list > li:nth-child(1) h3 a::before{
+  background-position-y: 0;
+}
+aside .wrap ul.list > li:nth-child(2) h3 a::before{
+  background-position-y: -41px;
+}
+aside .wrap ul.list > li:nth-child(3) h3 a::before{
+  background-position-y: calc(-41px * 2);
+}
+aside .wrap ul.list > li:nth-child(4) h3 a::before{
+  background-position-y: calc(-41px * 3);
+}
+aside .wrap ul.list > li:nth-child(5) h3 a::before{
+  background-position-y: calc(-41px * 4);
+}
+aside .wrap ul.list > li:nth-child(6) h3 a::before{
+  background-position-y: calc(-41px * 5);
+}
+aside .wrap ul.list > li:nth-child(7) h3 a::before{
+  background-position-y: calc(-41px * 6);
+}
+aside .wrap ul.list > li:nth-child(8) h3 a::before{
+  background-position-y: calc(-41px * 7);
+}
+aside .wrap ul.list > li ul.listsub {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding-top: 30px;
+}
+aside .wrap ul.list > li ul.listsub::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  transition: .2s;
+  transition-delay: .2s;
+}
+aside .wrap ul.list > li ul.listsub.listwide::before {
+  width: 100%;
+  /*animation-name: listwide;
+  animation-delay: 0.2;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;*/
+}
+@keyframes listwide {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+aside .wrap ul.list > li:nth-child(1) ul.listsub::before {
+  background-color: #ffc100;
+}
+aside .wrap ul.list > li:nth-child(2) ul.listsub::before {
+  background-color: #99cc41;
+}
+aside .wrap ul.list > li:nth-child(3) ul.listsub::before {
+  background-color: #f68a0a;
+}
+aside .wrap ul.list > li:nth-child(4) ul.listsub::before {
+  background-color: #bb2b2b;
+}
+aside .wrap ul.list > li:nth-child(5) ul.listsub::before {
+  background-color: #7436b5;
+}
+aside .wrap ul.list > li:nth-child(6) ul.listsub::before {
+  background-color: #2dabdf;
+}
+aside .wrap ul.list > li:nth-child(7) ul.listsub::before {
+  background-color: #ff617f;
+}
+aside .wrap ul.list > li:nth-child(8) ul.listsub::before {
+  background-color: #727272;
+}
+aside .wrap ul.list > li ul.listsub li {
+  position: relative; /* 배경색이 li 위로 올라가는 것 방지 */
+}
+aside .wrap ul.list > li ul.listsub li a {
+  width: 100px;
+  overflow: hidden;
+  font-size: 0;
+}
+aside .wrap ul.list > li ul.listsub li a img {
+  transition: .5s;
+}
+aside .wrap ul.list > li ul.listsub li a img:hover {
+  transform: translateX(-100px);
+}
+
+.sliding {
+  right: 0px !important;
+}
+.asideHide {
+  right: -200px;
+}
+
+
+
+@media screen and (max-width:768px) {
+  aside {
+    display: block;
+    width: 100%;
+    top: 50px;
+    right: -100%;
+    height: calc(100% - 50px);
+    background-color: #fff;
+    position: absolute
+  }
+  .asideSliding {
+    right: 0;
+  }
+  aside .wrap {
+    width: 90%;
+    display: block;
+  }
+  aside .wrap ul.list {
+    text-align: left;
+    grid-template-rows: repeat(8, auto);
+  }
+  aside .wrap ul.list li {
+  }
+  aside .wrap ul.list > li:not(:first-child) h3 a {
+    border-top: 1px solid #e6e6e6;
+  }
+  aside .wrap ul.list > li h3 {
+    height: 70px;
+  }
+  aside .wrap ul.list > li h3::before {
+    display: none;
+  }
+  aside .wrap ul.list > li h3 a {
+    flex-direction: row;
+    justify-content: start;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 70px;
+    color: #333;
+  }
+  aside .wrap ul.list > li h3 a::before {
+    background-image: url(../img/aside/gnb_brand_menu_b.png);
+  }
+  aside .wrap ul.list > li h3 a::after {
+    content: "";
+    background-image: url(../img/plus.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+  }
+  aside .wrap ul.list > li div {
+    display: none;
+  }
+  aside .wrap ul.list > li ul.listsub {
+    position: static;
+    height: initial;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  aside .wrap ul.list > li ul.listsub::before {
+    display: none;
+  }
+  aside .wrap ul.list > li ul.listsub li {
+    width: calc(100% / 3);
+  }
+  aside .wrap ul.list > li ul.listsub li a {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  aside .wrap ul.list > li ul.listsub li a img {
+    width: 100%;
+  }
+  aside .wrap ul.list > li ul.listsub li a img:hover {
+    transform: none;
+  }
+}
